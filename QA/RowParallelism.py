@@ -37,6 +37,7 @@ if __name__ == '__main__':
             diff += torch.abs(final_output[i][j] - sliced_output_1[i][j] - sliced_output_2[i][j])
     print('diff:', diff)
     print('torch.equal:', torch.equal(final_output, sliced_output_1 + sliced_output_2))
+    # print('torch.ne:', torch.ne(final_output, sliced_output_1 + sliced_output_2))
     torch.testing.assert_close(final_output, sliced_output_1 + sliced_output_2, rtol=0.0, atol=0.0)
     print('=====================')
 
